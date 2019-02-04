@@ -1,5 +1,6 @@
 class RecipesController < ApplicationController
   before_action :set_recipe! only: %i{show update}
+  
   def show
     @recipe = Recipe.find(params[:id])
     if @recipe.ingredients.last.try(:name)
@@ -39,4 +40,6 @@ class RecipesController < ApplicationController
         ]
       )
     end
+    
+    def set_recipe!
 end
