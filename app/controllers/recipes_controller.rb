@@ -5,7 +5,7 @@ class RecipesController < ApplicationController
   end
 
   def index
-    @recipes = Recipe.all
+    @recipes = Recipes.all
   end
 
   def new
