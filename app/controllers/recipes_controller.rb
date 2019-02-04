@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-  
+  before_action(only: %i[show edit]) { @user = User.find params[:id] }
   def show
     @recipe = Recipe.find(params[:id])
     if @recipe.ingredients.last.try(:name)
