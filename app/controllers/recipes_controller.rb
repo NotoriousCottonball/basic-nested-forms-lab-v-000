@@ -2,9 +2,6 @@ class RecipesController < ApplicationController
   before_action :set_recipe! only: %i{show update}
   
   def show
-    if @recipe.ingredients.last.try(:name)
-      @recipe.ingredients.build
-    end
   end
 
   def index
